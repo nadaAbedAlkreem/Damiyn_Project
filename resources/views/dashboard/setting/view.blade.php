@@ -46,7 +46,7 @@
                                     <div class="card-body">
                                         <div class="table-responsive">
                                             <div class="modal-body">
-                                            <table class="table table-bordered  data-table   table-sm">
+                                            <table class="table table-bordered table-sm">
                                                                         <thead>
                                                                           <tr>
                                                                         
