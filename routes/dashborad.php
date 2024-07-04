@@ -15,12 +15,12 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/register', [App\Http\Controllers\Dashboard\Auth\RegisterController::class, 'showRegisterForm'])->name('admin.register');
     Route::post('/register', [App\Http\Controllers\Dashboard\Auth\RegisterController::class, 'create'])->name('admin.register');
-    
+        Route::get( '/logout' ,  [App\Http\Controllers\Dashboard\Auth\LoginController::class, 'destroy'])
+    ->name('admin.logout');
  
  
     Route::middleware('auth:admin')->group(function () {
-    Route::get( '/logout' ,  [App\Http\Controllers\Dashboard\Auth\LoginController::class, 'destroy'])
-    ->name('logout');
+
     Route::get('/dashboard', [App\Http\Controllers\Dashboard\HomeController::class, 'index'])->name('admin.dashboard');
     Route::get('/partners/view', [App\Http\Controllers\Dashboard\PartnerController::class, 'index'])->name('admin.partners.view');
     Route::post('/partners/add', [App\Http\Controllers\Dashboard\PartnerController::class, 'store'])->name('admin.partners.add');
@@ -49,9 +49,9 @@ Route::prefix('admin')->group(function () {
     Route::get('/rating/view', [App\Http\Controllers\Dashboard\RatingController::class, 'index'])->name('admin.rating.view');
     Route::post('/rating/add', [App\Http\Controllers\Dashboard\RatingController::class, 'store'])->name('admin.rating.add');
  
-    Route::get('/setting/view', [App\Http\Controllers\Dashboard\SettingController::class, 'view'])->name('admin.setting.view');
-    Route::post('/setting/update',[App\Http\Controllers\Dashboard\SettingController::class,'updateImageSetting'])->name('admin.setting.update');
-    Route::post('/setting/add', [App\Http\Controllers\Dashboard\SettingController::class, 'store'])->name('admin.setting.add');
+    Route::get('/setting/view', [App\Http\Controllers\Dashboard\SettingController::class, 'index'])->name('admin.setting.view');
+    Route::post('/setting/update',[App\Http\Controllers\Dashboard\SettingController::class,'update'])->name('admin.setting.update');
+    // Route::post('/setting/add', [App\Http\Controllers\Dashboard\SettingController::class, 'store'])->name('admin.setting.add');
  
     Route::get('/order/view', [App\Http\Controllers\Dashboard\OrderController::class, 'index'])->name('admin.order.view');
   

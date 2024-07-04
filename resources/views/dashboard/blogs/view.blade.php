@@ -17,9 +17,7 @@
            </ol>
           </div>
             <div class="d-flex my-xl-auto right-content align-items-center">
-        <div class="pe-1 mb-xl-0">
-            <button type="button" class="btn btn-info btn-icon me-2 btn-b"><i class="mdi mdi-filter-variant"></i></button>
-        </div>
+        
         <div class="pe-1 mb-xl-0">
             <button type="button" id = "add-item"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" class="btn btn-danger btn-icon me-2 buttons"><i class="mdi mdi-plus-circle"></i></button>
         </div>

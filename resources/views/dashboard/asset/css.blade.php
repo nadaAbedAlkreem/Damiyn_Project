@@ -6,10 +6,10 @@
 <!-- Icons css -->
 <link href="{{asset('assets/css/icons.css')}}" rel="stylesheet">
 
- 
+<link href="{{url('assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
+
 <!-- Bootstrap css -->
 <link id="style" href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-<link href="{{asset('assets/plugins/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
 
 <!-- style css -->
 <link href="{{asset('assets/dashborad-assets/css/style.css')}}" rel="stylesheet">
@@ -17,8 +17,7 @@
 
 <!--- Animations css-->
 <link href="{{asset('assets/css/animate.css')}}" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+ 
 <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
           <!-- TinyMCE CDN -->
  	 

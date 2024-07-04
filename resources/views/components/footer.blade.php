@@ -22,7 +22,7 @@
 				<div class="col-md-6 col-footer">
 					<ul class=" list-footer">
 						<li class="nav-item li-text with-footer-link">
-							<a class="nav-link" href="Blogs.html">المقالات</a>
+							<a class="nav-link" href="{{route('bloges')}}">المقالات</a>
 						</li>
 						<li class="nav-item li-text with-footer-link">
 							<a class="nav-link action" href="index.html">من نحن</a>

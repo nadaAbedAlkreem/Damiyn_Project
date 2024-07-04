@@ -111,7 +111,7 @@ class BlogController extends Controller
 
     }
 
-    public function showIndex()
+    public function index_dashboard()
     {
  
      $bloges = Blog::get() ; 

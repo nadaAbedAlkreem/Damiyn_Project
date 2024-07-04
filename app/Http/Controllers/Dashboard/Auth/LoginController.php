@@ -8,6 +8,7 @@ use App\Models\Admin;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\LoginAdminsRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 
 class LoginController extends Controller
@@ -78,13 +79,12 @@ class LoginController extends Controller
     {
       Auth::guard('admin')->logout();
 
-        $this->guard->logout();
- 
+  
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('login');
+        return redirect()->route('admin.login');
     }
 
 }

@@ -4,7 +4,7 @@
 				<div class="sticky">
 					<aside class="app-sidebar sidebar-scroll">
 						<div class="main-sidebar-header active">
-							<a class="desktop-logo logo-light active" href="index.html"><img src="{{url('assets/img/brand/logo.png')}}" class="main-logo" alt="logo"></a>
+							<a class="desktop-logo logo-light active" href="{{route('home')}}"><img src="{{url('assets/images/logo.png')}}"  class="main-logo"  alt="logo"></a>
 							<a class="desktop-logo logo-dark active" href="index.html"><img src="{{url('assets/img/brand/logo-white.png')}}" class="main-logo" alt="logo"></a>
 							<a class="logo-icon mobile-logo icon-light active" href="index.html"><img src="{{url('assets/img/brand/favicon.png')}}" alt="logo"></a>
 							<a class="logo-icon mobile-logo icon-dark active" href="index.html"><img src="{{url('assets/img/brand/favicon-white.png')}}" alt="logo"></a>
@@ -13,7 +13,7 @@
 							<div class="app-sidebar__user clearfix">
 								<div class="dropdown user-pro-body">
 									<div class="main-img-user avatar-xl">
-										<img alt="user-img"  src='{{asset(Auth::guard("admin")->user()->image)}}' ><span class="avatar-status profile-status bg-green"></span>
+										<img alt="user-img"  src="{{url('assets/images/user/user-thumb.jpg')}}" ><span class="avatar-status profile-status bg-green"></span>
 									</div>
 									<div class="user-info">
 										<h4 class="fw-semibold mt-3 mb-0"></h4>
@@ -1010,14 +1010,15 @@
 														<ul class="sidemenu-list">
 															<li class="side-menu__label1"><a href="javascript:void(0);">Tables</a></li>
 															<li><a class="slide-item" href="{{route('admin.partners.view')}}">partners</a></li>
-															<li><a class="slide-item" href="{{route('admin.services.view')}}">services</a></li>
-															<li><a  class="slide-item" href="{{route('admin.blogs.view')}}">Blog-Edit</a></li>
+ 															<li><a  class="slide-item" href="{{route('admin.blogs.view')}}">Blog-Edit</a></li>
 															<li><a  class="slide-item" href="{{route('admin.advertisement.view')}}">advertisement</a></li>
 															<li><a  class="slide-item" href="{{route('admin.rating.view')}}">rating</a></li>
 															<li><a  class="slide-item" href="{{route('admin.setting.view')}}"> setting   </a></li>
 															<li><a  class="slide-item" href="{{route('admin.order.view')}}">orders</a></li>
 
 														</ul>
+
+														
 														
 													</div>
 													<div class="tab-pane tab-content-double" id="side33">
@@ -1118,6 +1119,8 @@
 															</div>
 														</div>
 													</div>
+
+													
 												</div>
 											</div>
 										</li>

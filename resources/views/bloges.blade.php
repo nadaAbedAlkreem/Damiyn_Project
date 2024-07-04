@@ -13,10 +13,10 @@
 					<!-- Article 01 -->
 					<article>
  						<div class="image">
-							<img class="img-fluid img-fluid-edit" src="{{('/storage_upload/'.$item->image)}}" alt="article-01">
+							<img class="img-fluid img-fluid-edit" src="{{('/storage/'.$item->image)}}" alt="article-01">
 						</div>
  						<h3>  {{$item->title}}</h3>
- 						<p> {!! $item->content !!}</p>
+ 						<p> {{ $item->content }}</p>
  						<div class="text-right date">
 						<span>{{ date('d M Y', strtotime($item->created_at)) }}</span>
 						</div>

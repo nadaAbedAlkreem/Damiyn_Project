@@ -1,4 +1,4 @@
-@extends('dashborad.layouts.app')
+@extends('dashboard.layouts.app')
 
 @section('content')
 <style>
@@ -24,12 +24,9 @@
            </ol>
           </div>
             <div class="d-flex my-xl-auto right-content align-items-center">
+      
         <div class="pe-1 mb-xl-0">
-            <button type="button" class="btn btn-info btn-icon me-2 btn-b"><i class="mdi mdi-filter-variant"></i></button>
-        </div>
-        <div class="pe-1 mb-xl-0">
-            <button type="button" id = "add-item"  data-bs-toggle="modal" data-bs-target="#ModalImgaeAdd" data-bs-whatever="@mdo" class="btn btn-danger btn-icon me-2 buttons"><i class="mdi mdi-plus-circle"></i></button>
-        </div>
+         </div>
  
        
     </div>
@@ -46,63 +43,64 @@
                                     <div class="card-body">
                                         <div class="table-responsive">
                                             <div class="modal-body">
-                                            <table class="table table-bordered table-sm">
-                                                                        <thead>
-                                                                          <tr>
-                                                                        
-                                                                                <th>id</th>
-                                                                                <th>image</th>
-                                                                                <th>created</th>
-                                                                                <th>action</th>
-                                                                            </tr>
-                                                                         </thead>
-                                                                          <tbody>
-                                                                            <tr>
-                                                                        
-                                                                            </tr>
-                                                                          </tbody>
-                                                              
-                                                                     </table>
-                                                      <form id="SubmitFormSetting"  enctype="multipart/form-data">
-                                                        <div class="card">
-                                                          <div class="card-body">
-                                                            <div id="wizard1">
-                                                              <section>
-                                                                <h2 class="d-none">setting Information</h2>
-                                                                <div class="control-group form-group">
-                                                                              @if(!empty($data))	
-                                                                                @foreach($data as $item)
-                                                                                      @switch ($item->key) 
-                                                                                        @case ('logoFooter')
-                                                                                        <label class="form-label">{{$item->key}}    <i class="bi bi-eye-fill"  data-bs-toggle="modal" data-bs-target="#modalImageLogoFooter"></i></label>
-                                                                                        <input type="file" id = "{{$item->key}}"  class="form-control "    name="{{$item->key}}"  >
-                                                                                          <div class="modal fade" id="modalImageLogoFooter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                                                                <div class="modal-dialog">
-                                                                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><img src="assets/images/blog/close-circle.svg" alt=""></button>
-                                                                                                    <div class="modal-body modal-body-edit   ">
-                                                                                                      <img class="profile-user-img img-fluid "  style = "width: 125%; height: 125%;"  src='/storage_upload/{{$item->value}}'   alt="User  picture">
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                          </div>
-                                                                                    
-                                                                                    
-                                                                                          @break
-                                                                                        @case ('logoHeader')
-                                                                                        <label class="form-label">{{$item->key}} <i class="bi bi-eye-fill"  data-bs-toggle="modal" data-bs-target="#modalImageLogoHeader"></i> </label>
+                                            
+                                                                        <form id="SubmitFormSetting"  enctype="multipart/form-data">
+                                                                          <div class="card">
+                                                                            <div class="card-body">
+                                                                              <div id="wizard1">
+                                                                                <section>
+                                                                                  <h2 class="d-none">setting Information</h2>
+                                                                                  <div class="control-group form-group">
+                                                                                  @if(!empty($setting))
+                                                                                  
+                                                                                  @foreach($setting as $item)
+                                                                              
+
+                                                                                  @if ($item->type_field == "images") 
+                                                                                  <!-- <label class="form-label">{{$item->key}} <i class="bi bi-eye-fill"  data-bs-toggle="modal" data-bs-target="#modalImageLogoHeader"></i> </label>
                                                                                           <input type="file" id = "{{$item->key}}" class="form-control required"     name="{{$item->key}}"  >
                                                                                           <div class="modal fade" id="modalImageLogoHeader" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                                                                 <div class="modal-dialog">
                                                                                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><img src="assets/images/blog/close-circle.svg" alt=""></button>
                                                                                                     <div class="modal-body modal-body-edit   ">
-                                                                                                      <img class="profile-user-img img-fluid "  style = "width: 125%; height: 125%;"  src='/storage_upload/{{$item->value}}'   alt="User  picture">
+                                                                                                      <img class="profile-user-img img-fluid "  style = "width: 125%; height: 125%;"  src='/storage/{{$item->value}}'   alt="User  picture">
                                                                                                     </div>
                                                                                                 </div>
-                                                                                          </div>
-                                                        
-                                                                                          @break
-                                                                                    @case('video')
-                                                                  
-                                                                                    <div class="card">
+                                                                                          </div> -->
+
+                                                                                          <label class="form-label card-body pt-0">{{$item->key}}</label>
+                                                            <div class="card-body pt-0">
+                                                            
+                                                            <div class="image-input image-input-empty image-input-outline mb-3" data-kt-image-input="true" style="background-image: url({{ asset('storage/' . $item->value) }})">
+                                                                 <div class="image-input-wrapper w-100px h-100px"></div>    
+                                                                            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                                                                <i class="bi bi-pencil-fill fs-7"></i>
+                                                                                <!--begin::Inputs-->
+                                                                                <input type="file" name="{{$item->key}}"  />
+                                                                                <input type="hidden" name="avatar_remove" />
+                                                                                <!--end::Inputs-->
+                                                                            </label>
+                                                                            <!--end::Label-->
+                                                                            <!--begin::Cancel-->
+                                                                            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                                                                                <i class="bi bi-x fs-2"></i>
+                                                                            </span>
+                                                                            <!--end::Cancel-->
+                                                                            <!--begin::Remove-->
+                                                                            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                                                                                <i class="bi bi-x fs-2"></i>
+                                                                            </span>
+                                                                            <!--end::Remove-->
+                                                                        </div>	
+                                                                    </div>	
+                                                                                  @elseif( $item->type_field == "string" )
+                                                                                              <div class="card-body pt-0">
+                                                                                                      <label class="form-label">{{$item->key}}</label>
+                                                                                                      <input type="text"  id = "{{$item->key}}" name="{{$item->key}}" value = "{{ $item->value }}" class="form-control required" ></input>
+                                                                                            </div>
+                                                                              
+                                                                                  @elseif( $item->type_field == "video" ) 
+                                                                                  <div class="card">
                                                                                         <div class="card-body">
                                                                                                       <div class="control-group form-group">
                                                                                                               <label class="form-label">{{$item->key}}<i class="bi bi-eye-fill"  data-bs-toggle="modal" data-bs-target="#modalVideo"></i>  </label>
@@ -116,22 +114,23 @@
                                                                                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><img src="assets/images/blog/close-circle.svg" alt=""></button>
                                                                                                     <div class="modal-body modal-body-edit   ">
                                                                                                     <video controls autoplay name="media"  style = "width: 125%; height: 125%;" >
-                                                                                                    <source src='/videos/{{$item->value}}' type="video/mp4">
+                                                                                                    <source src='/storage/{{$item->value}}' type="video/mp4">
                                                                                                     </video>                 
                                                                                                     </div>
                                                                                                 </div>
                                                                                           </div>
 
-                                                                                
-                                                                                        @break 
-                                                                                          @default
-                                                                                    <label class="form-label">{{$item->key}}</label>
-                                                                                          <textarea type="text"  id = "{{$item->key}}" name="{{$item->key}}"  class="form-control required"  >{{$item->value}}</textarea>
-                                                                                        @endswitch
-                                                                                          @endforeach
-                                                                                @endif
-                                                                
-                                                                                        <button type="button" id = "close" class="btn-close" data-bs-dismiss="modal" aria-label="Close" hidden></button>
+                                                               
+
+
+                                                                                  @endif
+ 
+                                                                                  @endforeach
+
+                                                                              @endif
+                                                                                                                        
+                                                                                                          
+                                                                                     <button type="button" id = "close" class="btn-close" data-bs-dismiss="modal" aria-label="Close" hidden></button>
                                                                                   </section>
                                                                                 </div>
                                                                             </div>
@@ -185,8 +184,7 @@
 {
  
     e.preventDefault();
-    tinymce.triggerSave(); 
-    let formData = new FormData($('#SubmitFormSetting')[0]);
+     let formData = new FormData($('#SubmitFormSetting')[0]);
      $.ajaxSetup({
      headers: {
      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -231,164 +229,11 @@
  
 
 
-$('#SubmitFormAddImage').on('submit',function(e)
-{
-  
-  if(document.querySelector('#submitFormImage').innerHTML == "Send")
-  {
-    e.preventDefault();
-    tinymce.triggerSave(); 
-    let formData = new FormData($('#SubmitFormAddImage')[0]);
-     $.ajaxSetup({
-     headers: {
-     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-              } });
-    $.ajax(
-    {
-    type:"POST",
-    url: "add",
-    data:formData,
-    contentType:false, // determint type object 
-    processData: false,  // processing on response 
-    success:function(response)
-    {
-        console.log(response);
-        document.getElementById("SubmitFormAddImage").reset(); 
-          var btn_close = document.getElementById('close-add-btn');  
-          btn_close.click();
-          var table = $('.data-table').DataTable();
-          table.draw();
-   
-    },
  
-   error: function(response) 
-    {
-     var jsonData = response.responseJSON.message;
-     var errorImage = document.getElementById('errorImage');
-     errorImage.textContent =   response.responseJSON.errors.image;  
-       if( response.responseJSON.errors.image){
-        
-        errorImage.hidden = false;
-
-       }else{
-        errorImage.hidden = true;
-
-       }
-         
-    
-    },
-   });
-  }  else if(document.querySelector('#submitFormImage').innerHTML == "update")
-  {
-    e.preventDefault();
-    let formData = new FormData($('#SubmitFormAddImage')[0]);
-     $.ajaxSetup({
-     headers: {
-     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-              } });
-    $.ajax(
-    {
-    type:"POST",
-    url: "update",
-    data:formData,
-    contentType:false, // determint type object 
-    processData: false,  // processing on response 
-    success:function(response)
-    {
-     $('#successMsg').show();
-      console.log(response);
-      var btn_close = document.getElementById('close-add-btn');  
-      btn_close.click();
-
-
-      swal({  
-         title: " success",  
-          icon: "success",  
-         button: "ok",  
-         });  
-
-
-      var table = $('.data-table').DataTable();
-      table.draw();
-    },
- 
-   error: function(response) 
-    {
-     var jsonData = response.responseJSON.message;
-       console.log(jsonData);    
-      
-    
-    },
-   });
-
-  }
- 
-});
 
 
  
- $(function () 
- {
-  
-   $.ajaxSetup(
-    {
-       headers: {
-           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-       }
-    });
-    $.noConflict();
-    $(document).ready(function($) 
-    {
-      var table = $('.data-table').DataTable(
-      {
-     processing: true,
-     serverSide: true,
-     paging: false,
-     ordering: false,
-     searching: false,
-     info: false,
-
  
-     columns: [
-         {data: 'id', name: 'id'},
-         {data: 'image', name: 'image'},
-         {data: 'create', name: 'create'},
-         {data: 'action', name: 'action'},
-
-      ]
-
-       });
-  
-  
- 
-  
- 
-    });
-
- 
-
- })
-
- $(document).on("click" , "#add-item" ,function(e)
- {
-  document.querySelector('#submitFormImage').innerHTML = 'Send';
-   var fileInput = document.getElementById('image');
-  fileInput.value = null;
-
- 
-	});
- $(document).on("click" , "#form-edit" ,function(e)
- {
-   document.querySelector('#submitFormImage').innerHTML = 'update';
-		e.preventDefault();
-    var id  = $(this).data("id");
-    document.getElementById("id").value = id;
-
-  var fileInput = document.getElementById('image');
-    fileInput.value = null;
-
- 
- }); 
   
 </script>                 
   </div>

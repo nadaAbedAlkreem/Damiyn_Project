@@ -35,7 +35,7 @@ Route::get( '/logout' ,  [App\Http\Controllers\Auth\LoginController::class, 'des
 
 Route::middleware('auth')->group(function () {
 
-Route::get('/bloges', [App\Http\Controllers\BlogController::class, 'showIndex'])->name('bloges');
+Route::get('/bloges', [App\Http\Controllers\Dashboard\BlogController::class, 'index_dashboard'])->name('bloges');
 
 Route::get('/order', [App\Http\Controllers\OrderController::class, 'index'])->name('order');
 Route::post('/order', [App\Http\Controllers\OrderController::class, 'store'])->name('order.store');

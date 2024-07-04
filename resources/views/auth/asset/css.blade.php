@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
+<link rel="icon" href="{{asset('assets/img/brand/favicon.png')}}" type="image/x-icon">
 <link href="{{url('assets/plugins/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
 <link href="{{url('assets/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
 <link href="{{url('assets/plugins/slick/slick.css')}}" rel="stylesheet">

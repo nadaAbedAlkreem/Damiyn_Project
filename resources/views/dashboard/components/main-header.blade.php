@@ -14,9 +14,7 @@
 								<a class="open-toggle" href="javascript:void(0);"><i class="header-icon fe fe-align-left" ></i></a>
 								<a class="close-toggle" href="javascript:void(0);"><i class="header-icons fe fe-x"></i></a>
 							</div>
-							<div class="main-header-center ms-3 d-sm-none d-md-none d-lg-block">
-								<input class="form-control" placeholder="Search for anything..." type="search"> <button class="btn"><i class="fas fa-search d-none d-md-block"></i></button>
-							</div>
+					 
 						</div>
 						<div class="main-header-right">
 							<button class="navbar-toggler navresponsive-toggler d-lg-none ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
@@ -261,11 +259,11 @@
 											<a class="new nav-link full-screen-link" href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></a>
 										</li> -->
 										<li class="dropdown main-profile-menu nav nav-item nav-link">
-											<a class="profile-user d-flex" href=""><img alt="" src='{{asset(Auth::guard("admin")->user()->image)}}'></a>
+											<a class="profile-user d-flex" href=""><img alt="" src="{{url('assets/images/user/user-thumb.jpg')}}"></a>
 											<div class="dropdown-menu">
 												<div class="main-header-profile bg-primary p-3">
 													<div class="d-flex wd-100p">
-														<div class="main-img-user"><img alt=""src='{{asset(Auth::guard("admin")->user()->image)}}' > </div>
+														<div class="main-img-user"><img alt=""src="{{url('assets/images/user/user-thumb.jpg')}}" > </div>
 														<div class="ms-3 my-auto">
 															<h6>{{Auth::guard("admin")->user()->name}}</h6>
 															<!-- <span>Premium Member</span> -->
@@ -274,7 +272,7 @@
 												</div>
   												<!-- <a class="dropdown-item" href="mail.html"><i class="bx bxs-inbox"></i>Inbox</a>
 												<a class="dropdown-item" href="chat.html"><i class="bx bx-envelope"></i>Messages</a> -->
- 												<a class="dropdown-item" href="{{route('logout')}}"><i class="bx bx-log-out"></i> Sign Out</a>
+ 												<a class="dropdown-item" href="{{route('admin.logout')}}"><i class="bx bx-log-out"></i> Sign Out</a>
 											</div>
 										</li>
 									</ul>

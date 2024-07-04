@@ -16,10 +16,7 @@
            </ol>
           </div>
             <div class="d-flex my-xl-auto right-content align-items-center">
-        <div class="pe-1 mb-xl-0">
-            <button type="button" class="btn btn-info btn-icon me-2 btn-b"><i class="mdi mdi-filter-variant"></i></button>
-        </div>
-     
+      
  
        
     </div>
