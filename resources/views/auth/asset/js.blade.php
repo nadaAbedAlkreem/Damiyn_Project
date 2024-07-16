@@ -1,4 +1,4 @@
-<script src="{{url('assets/plugins/bootstrap/popper.min.js')}}"></script>
+    <script src="{{url('assets/plugins/bootstrap/popper.min.js')}}"></script>
 	<script src="{{url('assets/plugins/bootstrap/bootstrap.min.js')}}"></script>
 	<script src="{{url('assets/plugins/bootstrap/bootstrap-slider.js')}}"></script>
 	<script src="{{url('assets/plugins/tether/js/tether.min.js')}}"></script>

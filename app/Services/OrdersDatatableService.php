@@ -23,7 +23,7 @@ class OrdersDatatableService extends Controller
                     
                     ->filter(function ($instance) use ($request) {
                         if (!empty($request->get('type_order'))  ) {
-                            $instance->where('type_request', $request->get('type_request'));
+                            $instance->where('type_request', $request->get('type_order'));
                         }
                        if (!empty($request->get('search')) ) { 
                           $search =$request->get('search');

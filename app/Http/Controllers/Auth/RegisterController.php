@@ -62,7 +62,7 @@ class RegisterController extends Controller
          return view('auth.register');
     }
 
-    public function create(RegisteAdminRequest  $request)
+    public function create(RegisterRequest  $request)
     {
   
         $user =  User::create($request->registerInfo());

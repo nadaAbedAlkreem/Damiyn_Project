@@ -8,6 +8,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+
 
 
 class LoginController extends Controller
@@ -62,12 +64,11 @@ class LoginController extends Controller
         return parent::errorResponse()  ;
     }
 
-    public function destroy(Request $request)
+    public function logout(Request $request)
     {
-      Auth::guard('phone')->logout();
+       Auth::guard('phone')->logout();
 
-        $this->guard->logout();
- 
+  
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();

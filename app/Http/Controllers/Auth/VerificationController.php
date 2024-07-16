@@ -71,6 +71,9 @@ class VerificationController extends Controller
             return response()->json(['message' => 'Too many failed attempts. Try again after an hour.'], 429);
          }
 
+         $userId = Auth::guard('phone')->id(); 
+         $deleteRowNews= UserCode::where('user_id' , $userId)->delete(); 
+
 
          $user_code =  UserCode::create(
          [
@@ -82,7 +85,8 @@ class VerificationController extends Controller
     }
 
     public function showVerify2FAForm()
-    {
+    {    
+         
          return view('auth.verify-2fa');
     }
 

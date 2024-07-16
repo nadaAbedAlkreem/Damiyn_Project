@@ -19,7 +19,7 @@ $(document).ready(function()
               $.ajax(
                 {
                     type: 'POST',
-                    url: 'register', // Use the correct route here
+                    url: '/register/website', // Use the correct route here
                     data: formData,
                     processData: false, // Necessary for FormData
                     contentType: false, // Necessary for FormData
@@ -37,7 +37,7 @@ $(document).ready(function()
                                     {
                                     icon: 'error',
                                     title: 'Oops...',
-                                    text: error
+                                    text: error.responseJSON.message
                                 })
                         },
                  });

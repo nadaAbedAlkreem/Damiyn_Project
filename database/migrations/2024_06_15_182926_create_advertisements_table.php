@@ -18,7 +18,7 @@ return new class extends Migration
             $table->String('image')->unique();
             $table->String('slug')->unique() ; 
             $table->timestamps();
-            $table->timestamp('delete_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

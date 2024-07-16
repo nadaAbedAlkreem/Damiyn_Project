@@ -17,7 +17,9 @@
 	<!-- theme meta -->
 	<meta name="theme-name" content="classimax" />
 	<link rel="icon" href="{{asset('assets/img/brand/favicon.png')}}" type="image/x-icon">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
+  
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Include starrr plugin after jQuery -->
       <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>

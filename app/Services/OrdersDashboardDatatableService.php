@@ -24,7 +24,7 @@ class OrdersDashboardDatatableService extends Controller
         ->filter(function ($instance) use ($request) {
 
               if (!empty($request->get('type_order')) &&  $request->get('type_order') != -1 )  {
-                 $instance->where('type_order', $request->get('type_order'));
+                 $instance->where('type_request', $request->get('type_order'));
               }
               if (!empty($request->get('status')) &&  $request->get('status') != -1 )  {
                 $instance->where('status_order', $request->get('status'));

@@ -72,65 +72,7 @@ $(document).ready(function()
  
      
   });
-
-  $(document).ready(function() 
-  {
-    $('#SubmitFormOrder').on('submit',function(e)
-    {
-            e.preventDefault();
-        
-            //   let phone = $('#recipient-name').val();
-            //   let type_order= $('.form-select option:selected').val();
-            //   let details = $('#message-text').val();
-            //   console.log(name);
-            //   var token = $("meta[name='csrf-token']").attr("content");
-            let formData = new FormData(this); // Create FormData from the form element
-            $.ajaxSetup({
-                headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                     } });
-
-                     
-            console.log(formData);
-            $.noConflict();
-            $.ajax({
-            url: "order",
-            method:"post",
-            type:"post",
-            dataType: "json",
-            processData: false, // Necessary for FormData
-            contentType: false, // Necessary for FormData
-            data: formData,    
-            success:function(response){
-            $('#successMsg').show();
-            console.log(response);
-
-            swal({
-                    title:  'نجحت عملية ارسال الطلب ',
-                    icon: "success",
-                    buttons: true,
-                    dangerMode: false,
-                })
-
-            },
-            error: function(response ) {
-            var jsonData = response.responseJSON.message;
-            console.log(jsonData);  
-
-            swal({
-                    title:  jsonData ,
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                })
-
-            },
-            });
-
-        
-    });
-  });
-
+ 
 
 
  

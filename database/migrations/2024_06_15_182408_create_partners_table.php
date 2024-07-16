@@ -19,7 +19,7 @@ return new class extends Migration
             $table->String('logo');
             $table->String('slug')->unique() ; 
             $table->timestamps();
-            $table->timestamp('daleted_at')->nullable() ;
+            $table->timestamp('deleted_at')->nullable() ;
          });
     }
 

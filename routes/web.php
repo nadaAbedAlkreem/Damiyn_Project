@@ -23,17 +23,18 @@ include_once __DIR__.'/dashborad.php';
 //VerificationController
  
 Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegisterForm'])->name('register');
-Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'create']);
+Route::post('/register/website', [App\Http\Controllers\Auth\RegisterController::class, 'create'])->name('home.register');
 Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
 Route::get('/send-2fa-code',  [App\Http\Controllers\Auth\VerificationController::class, 'send2FACode'])->name('send-2fa-code');
 Route::get('/rsend-2fa-code/{userId}',  [App\Http\Controllers\Auth\VerificationController::class, 'rsend2FACode'])->name('rsend-2fa-code');
 Route::get('/verify-2fa', [App\Http\Controllers\Auth\VerificationController::class, 'showVerify2FAForm'])->name('verify-2fa');
 Route::post('/verify-2fa', [App\Http\Controllers\Auth\VerificationController::class, 'verify2FACode']);
-Route::get( '/logout' ,  [App\Http\Controllers\Auth\LoginController::class, 'destroy'])
+Route::get( '/logout' ,  [App\Http\Controllers\Auth\LoginController::class, 'logout'])
 ->name('logout');
 
 Route::middleware('auth')->group(function () {
+
 
 Route::get('/bloges', [App\Http\Controllers\Dashboard\BlogController::class, 'index_dashboard'])->name('bloges');
 
