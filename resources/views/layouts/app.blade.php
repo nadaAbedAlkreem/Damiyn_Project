@@ -13,7 +13,8 @@
 	<meta name="author" content="Themefisher">
 	<meta name="generator" content="Themefisher Classified Marketplace Template v1.0">
 	<meta name="csrf-token" content="{{ csrf_token() }}" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" integrity="sha512-gOQQLjHRpD3/SEOtalVq50iDn4opLVup2TF8c4QPI3/NmUPNZOk2FG0ihi8oCU/qYEsw4P6nuEZT2lAG0UNYaw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" 
+	href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" integrity="sha512-gOQQLjHRpD3/SEOtalVq50iDn4opLVup2TF8c4QPI3/NmUPNZOk2FG0ihi8oCU/qYEsw4P6nuEZT2lAG0UNYaw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<!-- theme meta -->
 	<meta name="theme-name" content="classimax" />
 	<link rel="icon" href="{{asset('assets/img/brand/favicon.png')}}" type="image/x-icon">
