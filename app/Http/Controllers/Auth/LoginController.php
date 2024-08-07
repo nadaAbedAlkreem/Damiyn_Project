@@ -49,17 +49,7 @@ class LoginController extends Controller
     public function showLoginForm()
     {
             
-        foreach($uni as $key =>$value)
-        {
-            if ($key == 'student') {
-                foreach ($value as $val =>$v){
-                    
-                    if ($v['name'] == 'nada') {
-                        print('hello'.$v['name']);
-                    }
-                }     
-            }
-            }
+      
          return view('auth.login');
     }
 
